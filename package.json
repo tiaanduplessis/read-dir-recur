@@ -1,6 +1,6 @@
 {
   "name": "read-dir-recur",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Recursively read directories",
   "main": "index.js",
   "repository": "https://github.com/tiaanduplessis/read-dir-recur",
