@@ -1,18 +1,18 @@
 const path = require('path')
 const fs = require('fs')
 
+const mm = require('micromatch')
+
 // Loosly based on: https://gist.github.com/victorsollozzo/4134793
 function readRecursive (base, pattern, ignore, result, read) {
-  const canIgnore = current => !ignore.includes(current)
-  const files = fs.readdirSync(base).filter(canIgnore)
+  const files = fs.readdirSync(base)
   result = result || []
 
   files.forEach(file => {
     const newBase = path.join(base, file)
-
     if (fs.statSync(newBase).isDirectory()) {
       result = readRecursive(newBase, pattern, ignore, result, read)
-    } else if (pattern.test(file)) {
+    } else if (mm([file], pattern, { ignore }).length) {
       const details = {
         base,
         name: file,
@@ -34,14 +34,15 @@ function readRecursive (base, pattern, ignore, result, read) {
 module.exports = function readDirRecur (opts = {}) {
   let { base = process.cwd(),
     readFile = false,
-    pattern = /.*/,
+    pattern = '*',
     ignore = []
   } = opts
 
   base = Array.isArray(base) ? base : [base]
 
   const result = base.reduce((acc, current) => {
-    acc[current] = readRecursive(current, pattern, ignore, [], readFile)
+    const patterns = Array.isArray(pattern) ? pattern : [pattern]
+    acc[current] = readRecursive(current, patterns, ignore, [], readFile)
     return acc
   }, {})
 

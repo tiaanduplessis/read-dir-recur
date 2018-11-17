@@ -30,5 +30,8 @@
       "node": true,
       "jest": true
     }
+  },
+  "dependencies": {
+    "micromatch": "^3.1.10"
   }
 }

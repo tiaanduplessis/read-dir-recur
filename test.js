@@ -31,7 +31,7 @@ beforeAll(() => {
 test('should read directory recursively', () => {
   expect(readDirRecur).toBeDefined()
 
-  const result = (readDirRecur({ readFile: false, pattern: /.*\.js/, ignore: ['baaa'], base: ROOT_DIR }))
+  const result = (readDirRecur({ readFile: false, pattern: '*.js', ignore: ['baaa'], base: ROOT_DIR }))
 
   expect(result.bar).toBeDefined()
   expect(Array.isArray(result.bar)).toBeTruthy()

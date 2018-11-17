@@ -41,11 +41,13 @@ bar/
 ```js
 const readDirRecur = require('read-dir-recur')
 
-console.log(readDirRecur({ readFile: false, pattern: /.*\.js/, ignore: ['baaa'], base: ROOT_DIR }))
+console.log(readDirRecur({ readFile: false, pattern: '*.js', ignore: ['baaa'], base: ROOT_DIR }))
 //  { bar:
 //        [ { base: 'bar', name: 'baz.js', ext: '.js', size: 0 },
 //          { base: 'bar', name: 'ping.js', ext: '.js', size: 0 } ] }
 ```
+
+Uses [micromatch](https://github.com/micromatch/micromatch) for `pattern` and `ignore` of files.
 
 ## Contribute
 
