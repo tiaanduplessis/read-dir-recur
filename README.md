@@ -4,7 +4,7 @@
 [![package downloads](https://img.shields.io/npm/dm/read-dir-recur.svg?style=flat-square)](https://npmjs.org/package/read-dir-recur)
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 [![package license](https://img.shields.io/npm/l/read-dir-recur.svg?style=flat-square)](https://npmjs.org/package/read-dir-recur)
-[![make a pull request](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
+[![make a pull request](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com) [![Greenkeeper badge](https://badges.greenkeeper.io/tiaanduplessis/read-dir-recur.svg)](https://greenkeeper.io/)
 
 > Recursively read directories
 
